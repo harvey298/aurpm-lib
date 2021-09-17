@@ -9,6 +9,7 @@ pub mod aur_use {
         pub r#type: String,
         pub resultcount: i32,
     }
+    #[no_mangle]
     pub async fn does_pkg_exist(pkg_name: &str) -> Result<AurResponse, reqwest::Error> {
         let resp: AurResponse = reqwest::get(pkg_name)
         .await?
